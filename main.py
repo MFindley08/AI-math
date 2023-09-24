@@ -1,3 +1,12 @@
+import streamlit as st
+from langchain.chat_models import ChatOpenAI
+from langchain.prompts import ChatPromptTemplate
+
+st.set_page_config(page_title="Sum = Thin', Your Friendly Math Mentor")
+st.title("AI Math Mentor")
+openai_api_key = st.sidebar.text_input('OpenAI API Key', type='password')
+
+
 prompt = """
 Serve as a math and arithmetic reasoning guide, 
 assisting students in resolving mathematical
@@ -39,15 +48,25 @@ Answer: The next term in the sequence is 162.
 Question: {question}
 """
 
-from langchain.chat_models import ChatOpenAI
-from langchain.prompts import ChatPromptTemplate
 
 def generate_response(question):
-    chat = ChatOpenAI(temperature=0.0, openai_api_key=openai_api_key)
+    chat = ChatOpenAI(temperature=0.0, openai_api_key=	
+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)
     prompt_template = ChatPromptTemplate.from_template(template=prompt)
     messages = prompt_template.format_messages(
         question=question
     )
     response = chat(messages)
     return response.content
+
+with st.form('myform'):
+    question = st.text_input('Enter question:', '')
+    clues = st.form_submit_button('Give me clues')
+    answer = st.form_submit_button('Show me the answer')
+    if not openai_api_key.startswith('sk-'):
+        st.warning('Please enter your OpenAI API key!', icon='⚠')
+    if clues and openai_api_key.startswith('sk-'):
+        st.info(generate_response(question).split("Clues")[1][2:])
+    if answer and openai_api_key.startswith('sk-'):
+        st.info(generate_response(question).split("Clues")[0])
 
