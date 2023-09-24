@@ -20,26 +20,20 @@ Answer: John has 8 apples.
 
 Question:  If the length of a rectangle is 8 cm and the width 
 is 5 cm, what is its perimeter?
-
 Clue: To find the perimeter of a rectangle, add the lengths 
 of all four sides. For a rectangle, opposite sides are equal in length.
-
 Answer: The perimeter of the rectangle is 26 cm.
 
 Question: Solve for x: (1/2)x + 4 = 8.
-
 Clue: To isolate x, first, subtract 4 from both sides of the equation. Then, multiply both sides by 2 (the reciprocal of 1/2).
-
 Answer: x = 8.
 
 Question: What is the next number in the sequence? 
 Given Sequence: 2, 6, 18, 54, ...
-
 Clue: Common Ratio: 3
 Algorithm Application:
 Input r = 3 and the last term, which is 54.
 Calculate Next_term = 54 * 3 = 162.
-
 Answer: The next term in the sequence is 162.
 
 Question: {question}
