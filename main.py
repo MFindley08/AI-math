@@ -4,7 +4,7 @@ from langchain.prompts import ChatPromptTemplate
 from langchain.llms import OpenAI
 
 st.set_page_config(page_title="Sum = Thin', Your Friendly Math Mentor")
-st.title ("Your Friendly Math Mentor, Sum=Thin'")
+st.title ("Your Friendly Math Mentor, Sum=Thin' 🤖")
 openai_api_key = st.sidebar.text_input('OpenAI API Key', type='password')
 
 prompt = """
