@@ -1,3 +1,10 @@
+
+from flask import Flask, render_template
+app = Flask(__name__)
+@app.route('/')
+def index():
+  return render_template("index.html")
+
 import streamlit as st
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
